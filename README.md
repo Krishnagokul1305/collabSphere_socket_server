@@ -52,4 +52,3 @@ It uses Node.js, Express, and Socket.IO to enable real-time communication featur
 - `message`: Broadcast a message to a project room. Payload: `{ projectId, ... }`
 - `delete-message`: Broadcast message deletion. Payload: `{ messageId, projectId }`
 - `user_joined`: Emitted to room when a new user joins. Payload: `{ userId }`
-
