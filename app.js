@@ -25,6 +25,14 @@ io.on("connection", (socket) => {
     socket.to(projectId).emit("user_joined", { userId });
   });
 
+   socket.on("typing", ({ projectId, user }) => {
+    socket.to(projectId).emit("user_typing", { user });
+  });
+
+   socket.on("stop-typing", ({ projectId, user }) => {
+    socket.to(projectId).emit("user_stop_typing", { user });
+  });
+
   socket.on("message", (msg) => {
     io.to(msg.projectId).emit("message", msg);
   });
